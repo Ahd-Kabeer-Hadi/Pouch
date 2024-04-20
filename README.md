@@ -13,7 +13,7 @@ Pouch leverages the following technologies to deliver its functionalities:
 - **Prisma**: A modern database toolkit for TypeScript and Node.js.
 - **PostgreSQL**: A powerful, open-source relational database system.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
-- **Shadcn**: (assuming it's a typo and meant to be "Shadow" or similar): Possibly referring to a shadowing or styling library.
+- **Shadcn**: Shadcn UI is a collection of reusable UI components that can be copied and pasted into applications. 
 - **CI/CD**: Continuous Integration and Continuous Deployment pipelines for automated testing and deployment.
 - **Docker**: Containerization platform for packaging applications and their dependencies.
 
