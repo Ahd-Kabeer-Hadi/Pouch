@@ -2,6 +2,38 @@ import { PrismaClient } from '@prisma/client'
 import bcrypt from "bcrypt";
 const prisma = new PrismaClient()
 
+
+async function transferAmount( senderId: number, receiverId: number, amount: number ) {
+  await prisma.p2pTransfer.create({
+    data: {
+      amount: amount,
+      timestamp: new Date(),
+      fromUserId: senderId, 
+      toUserId: receiverId, 
+    },
+  });
+
+  await prisma.balance.update({
+    where: {
+      userId: senderId
+    },
+    data: {
+      amount: { decrement: amount }
+    }
+  });
+
+  await prisma.balance.update({
+    where: {
+      userId: receiverId
+    },
+    data: {
+      amount: { increment: amount }
+    }
+  });
+}
+
+
+
 async function main() {
   const alice = await prisma.user.upsert({
     where: { number: '1111111111' },
@@ -51,6 +83,12 @@ async function main() {
       },
     },
   })
+ 
+// Transfer from Alice to Bob
+await transferAmount( alice.id, bob.id, 2000);
+
+// Transfer from Bob to Alice
+await transferAmount( bob.id, alice.id, 1000);
   console.log({ alice, bob })
 }
 main()
@@ -62,3 +100,4 @@ main()
     await prisma.$disconnect()
     process.exit(1)
   })
+

@@ -1,6 +1,6 @@
 # Pouch: Your Digital Wallet MVP
 
-Pouch is a minimalist MVP (Minimum Viable Product) designed to emulate the functionality of a digital wallet app, drawing inspiration from platforms like Paytm. It serves as a simplified platform for managing transactions, akin to popular digital payment solutions.
+Pouch is a minimalist MVP (Minimum Viable Product) designed to emulate the functionality of a digital wallet app. It serves as a simplified platform for managing transactions, akin to popular digital payment solutions.
 
 ## Technologies Utilized
 
@@ -42,7 +42,7 @@ To set up and run Pouch locally, follow these steps:
    Run PostgreSQL either locally or on the cloud (e.g., Neon.tech):
 
    ```bash
-   docker run -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+   docker run --name pouch -e POSTGRES_PASSWORD=pword -d -p 5432:5432 postgres
    ```
 
 4. **Copy Environment Variables:**
