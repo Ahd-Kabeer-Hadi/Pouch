@@ -1,6 +1,6 @@
 # Pouch: Your Digital Wallet MVP
 
-Pouch is a minimalist MVP (Minimum Viable Product) designed to emulate the functionality of a digital wallet app. It serves as a simplified platform for managing transactions, akin to popular digital payment solutions.
+Pouch is a minimalist MVP (Minimum Viable Product) designed to emulate the functionality of a digital wallet app. Pouch isn’t just any wallet app—it’s a versatile platform that can be seamlessly integrated with other services to serve as their wallet and reward management system. I originally developed Pouch to complement my passion project, Menteor, which I’m currently working on. Right now, Pouch is in its MVP stage, featuring two main modules: user, handling all things wallet-related, and merchant, designed for managing rewards by admin users.
 
 ## Technologies Utilized
 
