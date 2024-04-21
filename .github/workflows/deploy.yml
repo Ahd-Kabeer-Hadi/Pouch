@@ -22,8 +22,9 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./docker/Dockerfile.userapp
+        file: ./Docker/Dockerfile.userapp
         push: true
         tags: kabeerhadi/pouch:latest 
+
     - name: Verify Pushed Image
       run: docker pull kabeerhadi/pouch:latest  
