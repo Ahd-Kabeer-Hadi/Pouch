@@ -6,16 +6,16 @@ Pouch is a minimalist MVP (Minimum Viable Product) designed to emulate the funct
 
 Pouch leverages the following technologies to deliver its functionalities:
 
-- **Next.js**: A React framework for building web applications with server-side rendering and routing.
-- **Express**: A flexible Node.js web application framework.
-- **AWS**: Cloud services utilized for deployment, storage, and scalability.
-- **Monorepo**: Organizational structure for managing multiple projects within a single repository.
-- **Prisma**: A modern database toolkit for TypeScript and Node.js.
-- **PostgreSQL**: A powerful, open-source relational database system.
-- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
-- **Shadcn**: Shadcn UI is a collection of reusable UI components that can be copied and pasted into applications. 
-- **CI/CD**: Continuous Integration and Continuous Deployment pipelines for automated testing and deployment.
-- **Docker**: Containerization platform for packaging applications and their dependencies.
+- **Next.js**: Utilized for both the User and Merchant applications.
+- **Express**: Employed to simulate bank endpoints, ensuring transaction success.
+- **AWS**: Utilized EC2 for deployment. Future integration is postponed to streamline and reduce costs initially.
+- **Monorepo**: Utilized Turborepo as the build system and for maintaining the Monorepo.
+- **Prisma**: Utilized as the ORM.
+- **PostgreSQL**: Dockerized container for local development and NeonDB for production.
+- **Tailwind CSS**: Utilized for styling.
+- **Shadcn**: Planned for future integration, as the current version of the app is a basic MVP.
+- **CI/CD**: Implemented for building and deploying to Docker.
+- **Docker**: Utilized for containerization.
 
 ## Features
 
