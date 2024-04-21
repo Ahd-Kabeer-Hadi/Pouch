@@ -36,11 +36,3 @@ export async function createOnrampTransaction(
     }
 }
 
-/// just trying to over engineer this
-const generateToken = async (provider:string, reciever: string) => {
-    const key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    const hashedKey = await bcrypt.hash(reciever + key, 10);
-    const token = String(provider + hashedKey);
-    console.log("token", token);
-    return token;
-}

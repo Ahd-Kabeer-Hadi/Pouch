@@ -3,11 +3,13 @@ name: Build and Deploy to Docker Hub
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
     - name: Check Out Repo
       uses: actions/checkout@v2
@@ -17,13 +19,14 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
+    
     - name: Build and Push Docker image
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./docker/Dockerfile.userapp
+        file: ./Docker/Dockerfile.userapp
         push: true
         tags: kabeerhadi/pouch:latest 
+
     - name: Verify Pushed Image
       run: docker pull kabeerhadi/pouch:latest  
