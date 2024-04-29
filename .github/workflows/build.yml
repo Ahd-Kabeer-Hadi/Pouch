@@ -1,6 +1,4 @@
 name: Build succeed on PR
-env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 on:
   pull_request:
     branches:
