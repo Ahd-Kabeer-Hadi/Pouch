@@ -1,15 +1,14 @@
 name: Build and Deploy to Docker Hub
 
-env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
 on:
   push:
     branches:
       - main
 
 jobs:
-  build-and-push:
+  build-and-push: 
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     runs-on: ubuntu-latest
     steps:
     - name: Check Out Repo
