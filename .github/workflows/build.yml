@@ -1,4 +1,6 @@
 name: Build succeed on PR
+env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 on:
   pull_request:
     branches:
@@ -6,13 +8,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-     env:
+    env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    runs-on: ubuntu-latest
+     
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
       
